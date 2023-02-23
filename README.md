@@ -12,9 +12,20 @@ A blog post, explaining some of the motivation behind the package, is available 
 
 ## Installation
 
-### With `vc-use-package`
+### With `package-vc-install`
 
-If you use Emacs 29+ and [vc-use-package], you can install this package via
+If you use a recent enough version of Emacs, the built-in function
+`package-vc-install` may be used to directly install this package from
+its remote:
+
+``` emacs-lisp
+(package-vc-install "https://github.com/slotThe/query-replace-many")
+(require 'query-replace-many)
+(bind-key "C-M-%" #'query-replace-many)
+```
+
+Even better: [vc-use-package] provides `use-package` integration for
+`package-vc-install`.
 
 ``` emacs-lisp
 (use-package query-replace-many
